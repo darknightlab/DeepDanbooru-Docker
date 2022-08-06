@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  deepdanbooru-web:
+    build: .
+    container_name: deepdanbooru-web
+    restart: always
+    ports:
+      - "15100:80"
+    volumes:
+      - ./logs:/root/deepdanbooru/logs
