@@ -10,3 +10,10 @@ services:
       - "15100:80"
     volumes:
       - ./logs:/root/deepdanbooru/logs
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
