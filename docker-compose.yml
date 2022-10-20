@@ -2,11 +2,13 @@ version: "3"
 
 services:
   deepdanbooru-web:
-    image: deepdanbooru_web
+    image: deepdanbooru-web
     build: .
     container_name: deepdanbooru-web
     restart: always
+    command: ["web", "--project-path", "/root/deepdanbooru/project", "--port", "80"]
     ports:
       - "15100:80"
     volumes:
-      - ./logs:/root/deepdanbooru/logs
+      - ./project:/root/deepdanbooru/project
+      - ./log:/root/deepdanbooru/log
