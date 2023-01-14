@@ -2,8 +2,8 @@ version: "3"
 
 services:
   deepdanbooru-web:
-    image: deepdanbooru-web:gpu
-    build: .
+    image: darknightlab/deepdanbooru-docker:gpu
+    # build: .
     container_name: deepdanbooru-web
     restart: always
     command: ["web", "--project-path", "/root/deepdanbooru/project", "--port", "80", "--allow-gpu"]
